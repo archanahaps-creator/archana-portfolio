@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archana Singh — Product Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2444;--accent:#2563EB;--accent-light:#EFF6FF;--gold:#C8952A;--text:#1A1A2E;--text-mid:#4A5568;--text-light:#718096;--border:#E2E8F0;--bg:#FAFBFC;--white:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--navy);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text-mid);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+section{padding:80px 2rem}.container{max-width:1100px;margin:0 auto}
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.15) 0%,transparent 70%);border-radius:50%}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.hero-tag{display:inline-block;background:rgba(37,99,235,0.2);color:#93C5FD;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px;border:1px solid rgba(37,99,235,0.3)}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,6vw,72px);color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:8px}
+.hero h1 span{color:#93C5FD}
+.hero-subtitle{font-size:20px;font-weight:300;color:rgba(255,255,255,0.6);margin-bottom:32px}
+.hero-desc{font-size:17px;color:rgba(255,255,255,0.75);max-width:600px;line-height:1.8;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+.stat{border-left:2px solid rgba(37,99,235,0.5);padding-left:16px}
+.stat-num{font-family:'DM Serif Display',serif;font-size:32px;color:#fff;line-height:1}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.btn-primary:hover{background:#1D4ED8;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:rgba(255,255,255,0.8);padding:12px 28px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.25)}
+.btn-outline:hover{border-color:rgba(255,255,255,0.6);color:#fff}
+.hero-domains{margin-top:48px;display:flex;gap:12px;flex-wrap:wrap}
+.domain-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.6);font-size:12px;padding:6px 14px;border-radius:100px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,40px);color:var(--navy);line-height:1.2;letter-spacing:-0.5px;margin-bottom:16px}
+.section-desc{font-size:16px;color:var(--text-mid);max-width:560px;line-height:1.8;margin-bottom:48px}
+.philosophy{background:var(--white)}
+.quote-block{background:var(--navy);border-radius:16px;padding:40px 48px;margin-bottom:48px;position:relative;overflow:hidden}
+.quote-block::before{content:'\201C';position:absolute;top:-20px;left:24px;font-family:'DM Serif Display',serif;font-size:160px;color:rgba(255,255,255,0.04);line-height:1}
+.quote-text{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;line-height:1.5;font-style:italic;position:relative;z-index:1}
+.philosophy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.phil-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all 0.2s}
+.phil-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.phil-num{font-family:'DM Serif Display',serif;font-size:36px;color:var(--border);line-height:1;margin-bottom:12px}
+.phil-title{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.phil-desc{font-size:13px;color:var(--text-mid);line-height:1.6}
+.apm-phase{background:var(--accent-light)}
+.phase-banner{background:var(--navy);border-radius:16px;padding:32px 40px;margin-bottom:40px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.phase-date{background:rgba(37,99,235,0.3);color:#93C5FD;font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;white-space:nowrap}
+.phase-text{color:#fff;font-size:17px;line-height:1.6}
+.phase-text strong{color:#93C5FD}
+.responsibilities{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.resp-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:13px;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:10px}
+.resp-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.case-studies{background:var(--white)}
+.cases-grid{display:flex;flex-direction:column;gap:48px}
+.case-card{background:var(--bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:box-shadow 0.3s}
+.case-card:hover{box-shadow:0 12px 40px rgba(15,36,68,0.08)}
+.case-header{background:var(--navy);padding:32px 40px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.case-num{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.case-title{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;line-height:1.2}
+.case-tagline{font-size:14px;color:rgba(255,255,255,0.5);margin-top:6px}
+.case-badge{background:rgba(37,99,235,0.3);color:#93C5FD;font-size:12px;font-weight:600;padding:8px 16px;border-radius:8px;white-space:nowrap;align-self:flex-start}
+.case-body{padding:40px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.case-col-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.case-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.case-col ul li{font-size:14px;color:var(--text-mid);padding-left:16px;position:relative;line-height:1.5}
+.case-col ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:12px}
+.ownership{background:var(--bg)}
+.ownership-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.own-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.2s}
+.own-card:hover{border-color:var(--accent)}
+.own-icon{font-size:24px;margin-bottom:16px}
+.own-title{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:14px}
+.own-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.own-list li{font-size:13px;color:var(--text-mid);padding-left:14px;position:relative}
+.own-list li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:700}
+.experience{background:var(--white)}
+.exp-timeline{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:32px 0;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none}
+.exp-company{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:4px}
+.exp-period{font-size:12px;color:var(--text-light)}
+.exp-domain{margin-top:8px;font-size:11px;color:var(--text-light);line-height:1.6}
+.exp-title{font-family:'DM Serif Display',serif;font-size:20px;color:var(--navy);margin-bottom:10px}
+.exp-desc{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:14px}
+.exp-tags{display:flex;gap:8px;flex-wrap:wrap}
+.exp-tag{background:var(--bg);border:1px solid var(--border);font-size:11px;color:var(--text-mid);padding:4px 10px;border-radius:100px}
+.app-links{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.app-link{background:var(--navy);color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:6px;text-decoration:none;transition:background 0.2s}
+.app-link:hover{background:var(--accent)}
+.skills{background:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.skill-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px}
+.skill-cat{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{background:var(--bg);border:1px solid var(--border);font-size:12px;color:var(--text-mid);padding:5px 12px;border-radius:100px;font-weight:500}
+.contact{background:var(--navy);text-align:center;padding:80px 2rem}
+.contact .section-label{color:#93C5FD}
+.contact .section-title{color:#fff}
+.contact-desc{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:40px}
+.contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.contact-link{background:rgba(255,255,255,0.1);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.15)}
+.contact-link:hover{background:var(--accent);border-color:var(--accent)}
+footer{background:#080F1C;padding:20px 2rem;text-align:center}
+footer p{font-size:12px;color:rgba(255,255,255,0.25)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{animation:fadeUp 0.7s ease both}
+.hero-inner>*:nth-child(1){animation-delay:0.1s}
+.hero-inner>*:nth-child(2){animation-delay:0.2s}
+.hero-inner>*:nth-child(3){animation-delay:0.3s}
+.hero-inner>*:nth-child(4){animation-delay:0.4s}
+.hero-inner>*:nth-child(5){animation-delay:0.5s}
+.hero-inner>*:nth-child(6){animation-delay:0.6s}
+.hero-inner>*:nth-child(7){animation-delay:0.7s}
+@media(max-width:768px){.nav-links{display:none}.case-grid{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;gap:8px}.hero-stats{gap:24px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Archana Singh</a>
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#casestudies">Case Studies</a></li>
+      <li><a href="#ownership">Ownership</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Product Portfolio — 2025</div>
+    <h1>Archana <span>Singh</span></h1>
+    <div class="hero-subtitle">Business Analyst → Product Manager</div>
+    <p class="hero-desc">8+ years of cross-industry product experience. I turn ambiguous, complex problems into clean, scalable product solutions — from discovery to production.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">200+</div><div class="stat-label">PRDs Authored</div></div>
+      <div class="stat"><div class="stat-num">300+</div><div class="stat-label">FAQs Written</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Features Shipped Live</div></div>
+      <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#casestudies" class="btn-primary">View Case Studies</a>
+      <a href="https://in.linkedin.com/in/archanasingh31" target="_blank" class="btn-outline">LinkedIn Profile</a>
+    </div>
+    <div class="hero-domains">
+      <span class="domain-pill">OTA & Travel Tech</span>
+      <span class="domain-pill">FMCG Analytics</span>
+      <span class="domain-pill">Fintech & Equities</span>
+      <span class="domain-pill">Bangalore, India</span>
+      <span class="domain-pill">Open to Pan India</span>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-label">My Approach</div>
+    <h2 class="section-title">Product Philosophy</h2>
+    <div class="quote-block">
+      <div class="quote-text">"Clarity is a feature. Collaboration is a multiplier. Execution is everything."</div>
+    </div>
+    <div class="philosophy-grid">
+      <div class="phil-card"><div class="phil-num">01</div><div class="phil-title">Clarity before speed</div><div class="phil-desc">Well-defined requirements eliminate 70% of rework before development even starts.</div></div>
+      <div class="phil-card"><div class="phil-num">02</div><div class="phil-title">Deep collaboration</div><div class="phil-desc">Product + UX + Tech + QA + Legal working as one team, not in isolated silos.</div></div>
+      <div class="phil-card"><div class="phil-num">03</div><div class="phil-title">User empathy always</div><div class="phil-desc">If it doesn't feel right for the user, it's not ready to ship — regardless of timeline pressure.</div></div>
+      <div class="phil-card"><div class="phil-num">04</div><div class="phil-title">Execution discipline</div><div class="phil-desc">Follow-ups, blockers, dependencies — all handled proactively before they become problems.</div></div>
+      <div class="phil-card"><div class="phil-num">05</div><div class="phil-title">Documentation as product</div><div class="phil-desc">Good documentation is not overhead — it's the backbone of predictable, repeatable delivery.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="apm-phase" id="apm">
+  <div class="container">
+    <div class="section-label">Major Highlight</div>
+    <h2 class="section-title">APM Execution — Phase 2 Delivery</h2>
+    <div class="phase-banner">
+      <div class="phase-date">Jun 19 – Aug 31, 2025</div>
+      <div class="phase-text">Owned <strong>3 major features end-to-end</strong> — Real-Time Alerts, Loyalty Program, and Wallet — shipped live to production across Web, Android & iOS within a <strong>2-month cycle</strong>, coordinating <strong>10+ cross-functional members</strong> with zero critical post-launch defects.</div>
+    </div>
+    <div class="responsibilities">
+      <div class="resp-item"><div class="resp-dot"></div>Requirement Definition</div>
+      <div class="resp-item"><div class="resp-dot"></div>User Flow Creation</div>
+      <div class="resp-item"><div class="resp-dot"></div>PRDs & Edge Cases</div>
+      <div class="resp-item"><div class="resp-dot"></div>Technical Feasibility</div>
+      <div class="resp-item"><div class="resp-dot"></div>UX & Content Alignment</div>
+      <div class="resp-item"><div class="resp-dot"></div>Vendor Coordination</div>
+      <div class="resp-item"><div class="resp-dot"></div>Legal & Compliance</div>
+      <div class="resp-item"><div class="resp-dot"></div>Grooming Leadership</div>
+      <div class="resp-item"><div class="resp-dot"></div>Development Support</div>
+      <div class="resp-item"><div class="resp-dot"></div>QA Coordination</div>
+      <div class="resp-item"><div class="resp-dot"></div>Stakeholder Demo</div>
+      <div class="resp-item"><div class="resp-dot"></div>Zero Post-Launch Defects</div>
+    </div>
+  </div>
+</section>
+
+<section class="case-studies" id="casestudies">
+  <div class="container">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Feature Case Studies</h2>
+    <p class="section-desc">Three major features taken from problem to production — independently owned end-to-end.</p>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-header">
+          <div><div class="case-num">Case Study 01</div><div class="case-title">Real-Time Alerts (RTA)</div><div class="case-tagline">Instant hotel deal notifications to drive engagement & conversion</div></div>
+          <div class="case-badge">Live in Production</div>
+        </div>
+        <div class="case-body">
+          <div class="case-grid">
+            <div class="case-col"><div class="case-col-title">Problem</div><ul><li>Users missing time-sensitive vendor promotions</li><li>Reduced engagement and booking conversion</li><li>No real-time push notification infrastructure</li></ul></div>
+            <div class="case-col"><div class="case-col-title">My Role & Execution</div><ul><li>Defined all requirements and dependency maps</li><li>Designed flows and user journeys end-to-end</li><li>Aligned UX, content, and legal teams</li><li>Resolved multi-device notification conflicts</li><li>Fixed iOS push gaps and logout-state bugs</li><li>Resolved API failure edge cases</li><li>Executed Distro campaign end-to-end</li></ul></div>
+            <div class="case-col"><div class="case-col-title">Impact</div><ul><li>Delivered on time within Phase-2 cycle</li><li>Full notification reliability at launch</li><li>Reduced ambiguity and rework</li><li>Repeatable execution framework created</li><li>Improved promotional capability</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-header">
+          <div><div class="case-num">Case Study 02</div><div class="case-title">Loyalty Points System</div><div class="case-tagline">A reward ecosystem to increase retention & repeat bookings</div></div>
+          <div class="case-badge">Live in Production</div>
+        </div>
+        <div class="case-body">
+          <div class="case-grid">
+            <div class="case-col"><div class="case-col-title">Problem</div><ul><li>No mechanism to reward loyal users</li><li>No incentive for repeat bookings</li><li>No gamification or retention hooks</li></ul></div>
+            <div class="case-col"><div class="case-col-title">My Role & Execution</div><ul><li>Designed complete rules engine — awarding, redemption, caps, eligibility</li><li>Defined booking completion logic and CTA rules</li><li>Documented every rule, variation, edge case</li><li>Aligned UX journeys across all platforms</li><li>Managed content and legal vetting</li><li>Oversaw integrated Wallet + LP testing</li></ul></div>
+            <div class="case-col"><div class="case-col-title">Impact</div><ul><li>Scalable foundation for gamification</li><li>Clear value-communication to users</li><li>Strengthened behavior influence capability</li><li>Cross-platform consistency achieved</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-header">
+          <div><div class="case-num">Case Study 03</div><div class="case-title">Wallet</div><div class="case-tagline">Unified wallet experience integrating credits & loyalty points</div></div>
+          <div class="case-badge">Delivered Early</div>
+        </div>
+        <div class="case-body">
+          <div class="case-grid">
+            <div class="case-col"><div class="case-col-title">Problem</div><ul><li>No single place to view or use credits</li><li>Scattered savings causing user confusion</li><li>No unified wallet architecture existed</li></ul></div>
+            <div class="case-col"><div class="case-col-title">My Role & Execution</div><ul><li>Architected complete wallet rules and visibility logic</li><li>Defined balance display, rule engine, transaction flows</li><li>Defined all error cases and fallback flows</li><li>Sequenced Mock API to Development to Backend</li><li>Authored T&Cs, FAQs, compliance docs independently</li></ul></div>
+            <div class="case-col"><div class="case-col-title">Impact</div><ul><li>Delivered 1–2 weeks ahead of schedule</li><li>Reduced risk on revenue-critical feature</li><li>Clear, unified wallet experience at launch</li><li>Strong base for future retention features</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ownership" id="ownership">
+  <div class="container">
+    <div class="section-label">Beyond the Features</div>
+    <h2 class="section-title">Product Ownership</h2>
+    <p class="section-desc">The full scope of product work I have owned — systems, logic, and infrastructure.</p>
+    <div class="ownership-grid">
+      <div class="own-card"><div class="own-icon">🎧</div><div class="own-title">Customer Support Systems</div><ul class="own-list"><li>Zoho Desk — complete end-to-end setup</li><li>Intercom — AI + Human agent flows</li><li>AWS Connect IVR — full configuration</li><li>300+ FAQ knowledge base articles</li><li>Ticket workflows and escalation structures</li><li>Internal agent SOPs and dashboards</li></ul></div>
+      <div class="own-card"><div class="own-icon">⚙️</div><div class="own-title">Core Product Logic</div><ul class="own-list"><li>Popularity scoring algorithm</li><li>Room recommendation engine</li><li>Traveller-type segmentation (30L+ data)</li><li>Pricing logic — margins, taxes, offers</li><li>Admin panel functional architecture</li><li>Auth0 roles and permissions</li></ul></div>
+      <div class="own-card"><div class="own-icon">📋</div><div class="own-title">Documentation & Compliance</div><ul class="own-list"><li>200+ end-to-end PRDs authored</li><li>User flows and acceptance criteria</li><li>GDPR / CCPA compliance</li><li>T&Cs and privacy policies</li><li>10DLC third-party certification</li><li>Release notes and SOPs</li></ul></div>
+      <div class="own-card"><div class="own-icon">🔗</div><div class="own-title">Cross-Functional Coordination</div><ul class="own-list"><li>Product, UX, Engineering alignment</li><li>QA, Legal, Content coordination</li><li>Marketing, Vendors, IT collaboration</li><li>10+ team members coordinated</li><li>Zero critical post-launch defects</li><li>Solo Agile ceremony ownership</li></ul></div>
+      <div class="own-card"><div class="own-icon">📊</div><div class="own-title">Strategy & Roadmapping</div><ul class="own-list"><li>1-year product roadmap created</li><li>Competitive analysis conducted</li><li>Market research and feasibility</li><li>Customer feedback analysis</li><li>GA4 funnel and retention analysis</li><li>A/B testing implementation</li></ul></div>
+      <div class="own-card"><div class="own-icon">🏗️</div><div class="own-title">Technical Collaboration</div><ul class="own-list"><li>Mock API definition and sequencing</li><li>Backend integration coordination</li><li>Auth0 security implementation</li><li>API failure debugging support</li><li>Multi-platform — Web, Android, iOS</li><li>Postman for API testing</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Experience Snapshot</h2>
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-meta"><div class="exp-company">Invisia Software Pvt. Ltd.</div><div class="exp-period">Sep 2023 – Present</div><div class="exp-domain">OTA & Travel Tech<br>Consumer Mobile App</div></div>
+        <div class="exp-content"><div class="exp-title">Business Analyst & APM (Trial)</div><div class="exp-desc">Delivered 3 major live features within a 2-month APM execution cycle. Authored 200+ PRDs, wrote 300+ FAQs, built complete customer support infrastructure, and led cross-functional delivery across Web, Android, and iOS.</div><div class="exp-tags"><span class="exp-tag">Travel Tech</span><span class="exp-tag">OTA</span><span class="exp-tag">APM Ownership</span><span class="exp-tag">Feature Delivery</span><span class="exp-tag">Support Systems</span></div><div class="app-links"><a href="https://apps.apple.com/us/app/zee-business-the-travel-app/id6751061596" target="_blank" class="app-link">iOS App Store</a><a href="https://play.google.com/store/apps/details?id=com.zeebusiness.zbtravel.thetravelapp" target="_blank" class="app-link">Google Play</a></div></div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-meta"><div class="exp-company">Insigma Technologies</div><div class="exp-period">Aug 2020 – Nov 2022</div><div class="exp-domain">FMCG Analytics<br>Image Recognition Tech</div></div>
+        <div class="exp-content"><div class="exp-title">Business Analyst</div><div class="exp-desc">Led requirement gathering and delivery for 10+ enterprise applications. Independently ran Agile ceremonies for a 15-member team. Designed image-recognition-based planogram validation workflows for FMCG field teams.</div><div class="exp-tags"><span class="exp-tag">FMCG</span><span class="exp-tag">Image Recognition</span><span class="exp-tag">Enterprise Apps</span><span class="exp-tag">Agile</span><span class="exp-tag">Field Execution</span></div></div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-meta"><div class="exp-company">Research & Ranking (Equentis)</div><div class="exp-period">Sep 2018 – Aug 2020</div><div class="exp-domain">Fintech<br>Equity & Stock Products</div></div>
+        <div class="exp-content"><div class="exp-title">Business Analyst</div><div class="exp-desc">Contributed to 5+ fintech web and mobile apps for equity research and stock investment tools. Led requirement discussions, scope definition, wireframes, and UAT coordination.</div><div class="exp-tags"><span class="exp-tag">Fintech</span><span class="exp-tag">Equities</span><span class="exp-tag">Mobile Apps</span><span class="exp-tag">UAT</span></div><div class="app-links"><a href="https://play.google.com/store/apps/details?id=com.rnr.main" target="_blank" class="app-link">Google Play</a></div></div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-meta"><div class="exp-company">Wishfin.com</div><div class="exp-period">Jan 2017 – Aug 2018</div><div class="exp-domain">Fintech<br>Loans & Financial Products</div></div>
+        <div class="exp-content"><div class="exp-title">Relationship Executive → Business Analyst</div><div class="exp-desc">Transitioned from customer-facing SME to Business Analyst by identifying workflow gaps in internal tools. Authored requirement documents, user stories, and process flows for operational improvements.</div><div class="exp-tags"><span class="exp-tag">Fintech</span><span class="exp-tag">Internal Tools</span><span class="exp-tag">BA Transition</span><span class="exp-tag">Process Flows</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-cat">Product Management</div><div class="skill-tags"><span class="skill-tag">PRD Authoring</span><span class="skill-tag">Roadmapping</span><span class="skill-tag">User Stories</span><span class="skill-tag">Acceptance Criteria</span><span class="skill-tag">Go-to-Market</span><span class="skill-tag">Feature Ownership</span></div></div>
+      <div class="skill-card"><div class="skill-cat">Agile & Delivery</div><div class="skill-tags"><span class="skill-tag">Sprint Planning</span><span class="skill-tag">Backlog Grooming</span><span class="skill-tag">Retrospectives</span><span class="skill-tag">UAT</span><span class="skill-tag">Bug Triage</span><span class="skill-tag">Release Management</span></div></div>
+      <div class="skill-card"><div class="skill-cat">Discovery & Analytics</div><div class="skill-tags"><span class="skill-tag">User Research</span><span class="skill-tag">Competitor Analysis</span><span class="skill-tag">A/B Testing</span><span class="skill-tag">GA4</span><span class="skill-tag">Funnel Analysis</span><span class="skill-tag">Customer Feedback</span></div></div>
+      <div class="skill-card"><div class="skill-cat">Tools</div><div class="skill-tags"><span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span><span class="skill-tag">Figma</span><span class="skill-tag">Miro</span><span class="skill-tag">Auth0</span><span class="skill-tag">Postman</span><span class="skill-tag">Draw.io</span><span class="skill-tag">MailerLite</span><span class="skill-tag">Azure DevOps</span></div></div>
+      <div class="skill-card"><div class="skill-cat">Support Systems</div><div class="skill-tags"><span class="skill-tag">Zoho Desk</span><span class="skill-tag">Intercom</span><span class="skill-tag">AWS Connect IVR</span><span class="skill-tag">AI Agent Flows</span><span class="skill-tag">Ticket Workflows</span></div></div>
+      <div class="skill-card"><div class="skill-cat">Domain Expertise</div><div class="skill-tags"><span class="skill-tag">OTA & Travel Tech</span><span class="skill-tag">FMCG Analytics</span><span class="skill-tag">Fintech & Equities</span><span class="skill-tag">Loyalty & Rewards</span><span class="skill-tag">Digital Wallet</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="contact-desc">Open to Product Manager, Associate Product Manager, Product Owner, and Senior BA roles — Pan India.</p>
+    <div class="contact-links">
+      <a href="mailto:archanahaps@gmail.com" class="contact-link">archanahaps@gmail.com</a>
+      <a href="https://in.linkedin.com/in/archanasingh31" target="_blank" class="contact-link">LinkedIn</a>
+      <a href="tel:+919958419429" class="contact-link">+91 99584 19429</a>
+    </div>
+  </div>
+</section>
+
+<footer><p>Archana Singh — Product Portfolio 2025 · Bangalore, India</p></footer>
+</body>
+</html>
