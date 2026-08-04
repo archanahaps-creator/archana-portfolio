@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archana Singh — Product Portfolio</title>
+<meta name="description" content="Product Manager with 9+ years across travel-tech, fintech and FMCG analytics. Case studies in payments, growth loops, AI discovery and requirements governance.">
+<meta property="og:title" content="Archana Singh — Product Portfolio">
+<meta property="og:description" content="Product decisions, trade-offs and the reasoning behind them — payments, growth, AI discovery.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1119;
+  --ink2:#121926;
+  --ink3:#1A2333;
+  --line:#26314553;
+  --line-s:#263145;
+  --tx:#E2E8F2;
+  --dim:#8A97AC;
+  --dimmer:#5E6B80;
+  --amber:#E9A741;
+  --amber-s:rgba(233,167,65,.11);
+  --teal:#4FC3B0;
+  --teal-s:rgba(79,195,176,.10);
+  --rose:#E2686B;
+  --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{
+  background:var(--ink);color:var(--tx);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+a{color:inherit}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(12,17,25,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+}
+nav.stuck{border-bottom-color:var(--line-s)}
+.nav-in{display:flex;align-items:center;gap:28px;height:62px}
+.brand{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:17px;letter-spacing:-.01em;text-decoration:none;flex-shrink:0}
+.brand span{color:var(--amber)}
+.nav-links{display:flex;gap:24px;margin-left:auto}
+.nav-links a{
+  text-decoration:none;font-size:13.5px;font-weight:500;color:var(--dim);
+  transition:color .2s;position:relative;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--tx)}
+.nav-cta{
+  margin-left:6px;text-decoration:none;font-size:13px;font-weight:600;
+  color:var(--amber);border:1px solid rgba(233,167,65,.4);
+  padding:7px 14px;border-radius:6px;transition:background .2s;
+}
+.nav-cta:hover{background:var(--amber-s)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  padding:150px 0 78px;position:relative;
+  background:
+    radial-gradient(880px 420px at 8% -10%, rgba(233,167,65,.13), transparent 68%),
+    radial-gradient(720px 380px at 92% 0%, rgba(79,195,176,.09), transparent 68%);
+}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--amber);
+  margin-bottom:22px;display:flex;align-items:center;gap:10px;
+}
+.eyebrow::after{content:'';height:1px;width:54px;background:linear-gradient(90deg,var(--amber),transparent)}
+h1.name{
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(40px,7vw,76px);font-weight:600;
+  line-height:.98;letter-spacing:-.035em;margin-bottom:20px;
+}
+.tagline{
+  font-family:'Fraunces',Georgia,serif;font-size:clamp(19px,2.5vw,25px);
+  font-weight:400;font-style:italic;color:var(--amber);
+  line-height:1.35;margin-bottom:24px;max-width:640px;
+}
+.intro{color:var(--dim);font-size:16.5px;max-width:610px;margin-bottom:34px}
+.intro b{color:var(--tx);font-weight:600}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
+.btn{
+  text-decoration:none;font-size:14px;font-weight:600;
+  padding:11px 21px;border-radius:7px;transition:all .2s;display:inline-block;
+}
+.btn-p{background:var(--amber);color:#0C1119}
+.btn-p:hover{background:#f0b45c;transform:translateY(-1px)}
+.btn-s{border:1px solid var(--line-s);color:var(--tx)}
+.btn-s:hover{border-color:var(--dim);background:rgba(255,255,255,.03)}
+
+.metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line-s);border:1px solid var(--line-s);border-radius:10px;overflow:hidden;
+}
+.metric{background:var(--ink);padding:20px 18px}
+.metric b{
+  display:block;font-family:'JetBrains Mono',monospace;
+  font-size:27px;font-weight:500;color:var(--teal);line-height:1.1;letter-spacing:-.02em;
+}
+.metric span{font-size:11.5px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;margin-top:5px;display:block}
+.domains{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.domains span{
+  font-size:12.5px;color:var(--dim);border:1px solid var(--line-s);
+  padding:5px 12px;border-radius:20px;
+}
+.domains .open{color:var(--teal);border-color:rgba(79,195,176,.35);background:var(--teal-s)}
+@media(max-width:720px){
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:118px 0 56px}
+}
+
+/* ---------- sections ---------- */
+section{padding:82px 0;position:relative}
+.sec-label{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--dimmer);margin-bottom:12px;
+}
+h2{
+  font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,4vw,40px);
+  font-weight:600;letter-spacing:-.025em;line-height:1.12;margin-bottom:14px;
+}
+h2 em{font-style:italic;color:var(--amber)}
+.sec-intro{color:var(--dim);max-width:600px;margin-bottom:46px;font-size:16px}
+
+/* ---------- method ---------- */
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.m-card{
+  background:var(--ink2);border:1px solid var(--line-s);border-radius:11px;
+  padding:26px 24px;transition:border-color .25s,transform .25s;
+}
+.m-card:hover{border-color:rgba(233,167,65,.35);transform:translateY(-2px)}
+.m-num{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--amber);letter-spacing:.1em;margin-bottom:14px;display:block;
+}
+.m-card h3{font-size:16.5px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em}
+.m-card p{color:var(--dim);font-size:14.5px;line-height:1.6}
+@media(max-width:860px){.method{grid-template-columns:1fr}}
+
+/* ---------- case studies ---------- */
+.cases{display:flex;flex-direction:column;gap:22px}
+.case{
+  background:var(--ink2);border:1px solid var(--line-s);
+  border-radius:14px;overflow:hidden;transition:border-color .25s;
+}
+.case:hover{border-color:#33405a}
+.case.flag{border-left:3px solid var(--amber)}
+.case-head{
+  padding:28px 30px 24px;cursor:pointer;
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;
+  background:none;border:none;width:100%;text-align:left;color:inherit;font-family:inherit;
+}
+.case-head:hover{background:rgba(255,255,255,.015)}
+.case-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.09em;
+  text-transform:uppercase;padding:4px 8px;border-radius:4px;
+}
+.tag-a{background:var(--amber-s);color:var(--amber)}
+.tag-t{background:var(--teal-s);color:var(--teal)}
+.tag-n{background:#26314540;color:var(--dim)}
+.case-head h3{
+  font-family:'Fraunces',Georgia,serif;font-size:23px;font-weight:600;
+  letter-spacing:-.02em;line-height:1.2;margin-bottom:9px;
+}
+.case-thesis{color:var(--dim);font-size:15px;max-width:640px;line-height:1.6}
+.toggle{
+  width:32px;height:32px;border-radius:50%;border:1px solid var(--line-s);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--dim);font-size:17px;flex-shrink:0;transition:transform .25s,border-color .25s,color .25s;
+}
+.case.open .toggle{transform:rotate(45deg);border-color:var(--amber);color:var(--amber)}
+.case-body{display:none;padding:0 30px 30px}
+.case.open .case-body{display:block;animation:reveal .3s ease}
+@keyframes reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.blk{margin-top:26px}
+.blk-label{
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dimmer);margin-bottom:11px;
+  padding-bottom:7px;border-bottom:1px solid var(--line-s);
+}
+.blk p{font-size:15px;color:var(--tx);margin-bottom:11px;line-height:1.68}
+.blk p:last-child{margin-bottom:0}
+.blk ul{list-style:none;margin-top:4px}
+.blk li{position:relative;padding-left:19px;margin-bottom:11px;font-size:15px;color:var(--tx);line-height:1.6}
+.blk li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--amber)}
+.blk li b{font-weight:600}
+.decision{
+  background:var(--ink3);border-left:3px solid var(--teal);
+  border-radius:0 8px 8px 0;padding:16px 19px;margin:14px 0;
+}
+.decision .d-l{
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:7px;
+}
+.decision p{font-size:14.5px;margin:0;color:var(--tx)}
+.metric-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.mpill{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;
+  background:var(--ink3);border:1px solid var(--line-s);
+  padding:6px 11px;border-radius:5px;color:var(--dim);
+}
+.mpill b{color:var(--teal);font-weight:500}
+@media(max-width:640px){
+  .case-head{padding:22px 20px 20px}
+  .case-body{padding:0 20px 24px}
+  .case-head h3{font-size:20px}
+}
+
+/* ---------- decision log (signature) ---------- */
+.log{border-top:1px solid var(--line-s)}
+.log-row{
+  display:grid;grid-template-columns:150px 1fr;gap:26px;
+  padding:22px 0;border-bottom:1px solid var(--line-s);align-items:start;
+}
+.log-k{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--amber);letter-spacing:.06em;padding-top:3px;line-height:1.5;
+}
+.log-v p{font-size:15.5px;line-height:1.62}
+.log-v .why{color:var(--dim);font-size:14px;margin-top:6px}
+@media(max-width:720px){
+  .log-row{grid-template-columns:1fr;gap:8px}
+  .log-k{padding-top:0}
+}
+
+/* ---------- scope grid ---------- */
+.scope{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.s-card{background:var(--ink2);border:1px solid var(--line-s);border-radius:11px;padding:24px 22px}
+.s-card h3{
+  font-size:14px;font-weight:700;margin-bottom:14px;letter-spacing:.02em;
+  color:var(--amber);text-transform:uppercase;font-family:'JetBrains Mono',monospace;
+}
+.s-card ul{list-style:none}
+.s-card li{
+  font-size:14px;color:var(--dim);padding-left:15px;position:relative;
+  margin-bottom:8px;line-height:1.55;
+}
+.s-card li::before{content:'';position:absolute;left:0;top:9px;width:4px;height:4px;border-radius:50%;background:var(--dimmer)}
+@media(max-width:900px){.scope{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.scope{grid-template-columns:1fr}}
+
+/* ---------- experience ---------- */
+.exp{border-top:1px solid var(--line-s)}
+.job{
+  display:grid;grid-template-columns:200px 1fr;gap:32px;
+  padding:30px 0;border-bottom:1px solid var(--line-s);
+}
+.job-meta .co{font-weight:700;font-size:16px;margin-bottom:5px;letter-spacing:-.01em}
+.job-meta .dt{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);margin-bottom:9px}
+.job-meta .dom{font-size:12.5px;color:var(--dimmer);line-height:1.5}
+.job-body .role{
+  font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:600;
+  color:var(--amber);margin-bottom:10px;letter-spacing:-.01em;
+}
+.job-body p{color:var(--dim);font-size:15px;line-height:1.65;margin-bottom:13px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{
+  font-size:11.5px;color:var(--dim);background:var(--ink2);
+  border:1px solid var(--line-s);padding:4px 10px;border-radius:20px;
+}
+.links{display:flex;gap:14px;margin-top:13px;flex-wrap:wrap}
+.links a{
+  font-size:12.5px;color:var(--teal);text-decoration:none;
+  border-bottom:1px solid rgba(79,195,176,.3);padding-bottom:1px;
+}
+.links a:hover{border-bottom-color:var(--teal)}
+@media(max-width:760px){.job{grid-template-columns:1fr;gap:14px}}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sk{background:var(--ink2);border:1px solid var(--line-s);border-radius:11px;padding:22px}
+.sk h3{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--amber);margin-bottom:13px;
+}
+.sk .items{display:flex;gap:7px;flex-wrap:wrap}
+.sk .items span{
+  font-size:13px;color:var(--tx);background:var(--ink3);
+  border:1px solid var(--line-s);padding:5px 11px;border-radius:6px;
+}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{
+  text-align:center;padding:96px 0 100px;
+  background:radial-gradient(700px 300px at 50% 0%, rgba(233,167,65,.09), transparent 70%);
+}
+.contact h2{margin-bottom:16px}
+.contact p{color:var(--dim);max-width:520px;margin:0 auto 32px}
+.c-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{
+  border-top:1px solid var(--line-s);padding:28px 0;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--dimmer);
+}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">Archana <span>Singh</span></a>
+    <div class="nav-links">
+      <a href="#method">Method</a>
+      <a href="#work">Case Studies</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#scope">Scope</a>
+      <a href="#experience">Experience</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Product Portfolio · 2026</div>
+    <h1 class="name">Archana Singh</h1>
+    <p class="tagline">I make the calls that don't show up in the demo — and write down why.</p>
+    <p class="intro">Product Manager with <b>9+ years</b> across travel-tech, fintech and FMCG analytics. Currently sole product owner for a consumer travel platform, running <b>eight major initiatives</b> end to end — payments, growth loops, and AI-powered discovery.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-p">Read the case studies</a>
+      <a href="https://www.linkedin.com/in/archanasingh31/" class="btn btn-s" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="metrics">
+      <div class="metric"><b>9+</b><span>Years in product</span></div>
+      <div class="metric"><b>8</b><span>Initiatives owned</span></div>
+      <div class="metric"><b>250+</b><span>PRDs authored</span></div>
+      <div class="metric"><b>0</b><span>Critical launch defects</span></div>
+    </div>
+    <div class="domains">
+      <span>OTA &amp; Travel Tech</span>
+      <span>Payments &amp; FinTech</span>
+      <span>FMCG Analytics</span>
+      <span>Bangalore, India</span>
+      <span class="open">Open — Pan India</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= METHOD ================= -->
+<section id="method">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">How I work</div>
+      <h2>Requirements are where products <em>quietly fail</em></h2>
+      <p class="sec-intro">Most product failures aren't dramatic. They're a wrong assumption that nobody checked, shipped confidently, and discovered three months later in the conversion data.</p>
+    </div>
+    <div class="method">
+      <div class="m-card rv">
+        <span class="m-num">01</span>
+        <h3>Read specifications adversarially</h3>
+        <p>I assume a requirement is wrong until I've traced it back to source. Most specs aren't ambiguous — they're confidently incorrect, and confidence is what gets them past review.</p>
+      </div>
+      <div class="m-card rv">
+        <span class="m-num">02</span>
+        <h3>Define success before build</h3>
+        <p>If I can't say how we'll know it worked, it isn't ready to scope. Metrics and analytics events go in the specification itself, not into a ticket after launch.</p>
+      </div>
+      <div class="m-card rv">
+        <span class="m-num">03</span>
+        <h3>Sequence by dependency, not by score</h3>
+        <p>The highest-value feature isn't always the next one to build. If it needs infrastructure that doesn't exist, building it first means building it twice.</p>
+      </div>
+      <div class="m-card rv">
+        <span class="m-num">04</span>
+        <h3>Remove states, don't handle them</h3>
+        <p>Every edge case you eliminate at the requirement stage is a class of bugs that never gets written, tested, or supported. Simplification is a design decision.</p>
+      </div>
+      <div class="m-card rv">
+        <span class="m-num">05</span>
+        <h3>Bring legal in at discovery</h3>
+        <p>Compliance discovered during UAT is a process failure, not bad luck. Anything touching payments, data or consent gets legal review while it's still cheap to change.</p>
+      </div>
+      <div class="m-card rv">
+        <span class="m-num">06</span>
+        <h3>Fix the generator, not the output</h3>
+        <p>When the same defect keeps appearing, the problem is upstream. Correcting individual artefacts is triage; correcting what produces them is the actual fix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASE STUDIES ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">Selected work</div>
+      <h2>Four decisions worth <em>explaining</em></h2>
+      <p class="sec-intro">Not a feature list. These are the judgment calls — what I chose, what I rejected, and what it would have cost to get wrong.</p>
+    </div>
+
+    <div class="cases">
+
+      <!-- CASE 1 -->
+      <div class="case flag rv" data-case>
+        <button class="case-head">
+          <div>
+            <div class="case-tags">
+              <span class="tag tag-a">Payments</span>
+              <span class="tag tag-t">Specification judgment</span>
+              <span class="tag tag-n">Pre-build catch</span>
+            </div>
+            <h3>Four wrong acceptance criteria, caught before build</h3>
+            <p class="case-thesis">A buy-now-pay-later payment specification arrived for review. Four of its acceptance criteria weren't ambiguous — they were incorrect. One would have silently blocked eligible bookings at checkout.</p>
+          </div>
+          <span class="toggle">+</span>
+        </button>
+        <div class="case-body">
+          <div class="blk">
+            <div class="blk-label">Context</div>
+            <p>Instalment payment options had become table stakes in online travel — every major competitor offered them, we didn't. The business case was straightforward. The specification was not.</p>
+            <p>My role was requirement review: lock acceptance criteria against the source PRD before engineering picked the work up. Routine, in theory.</p>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">What I found</div>
+            <p>Reading the criteria against source rather than reading them for sense, four were wrong:</p>
+            <ul>
+              <li><b>An inverted eligibility gate.</b> The advance-booking window was written as a minimum when the logic required a maximum. Shipped as written, it would have excluded exactly the bookings it was meant to include — and the failure would have looked like weak demand rather than a bug.</li>
+              <li><b>A session timer that didn't match reality.</b> The stated expiry duration and its band thresholds didn't correspond to actual session behaviour, which would have produced abandonment the analytics couldn't explain.</li>
+              <li><b>Country logic that couldn't work.</b> A single flat allow-list was specified for providers with completely different geographic footprints — one operating in a single market, the other across twenty-plus. One list cannot describe both.</li>
+              <li><b>Payment caps that shouldn't exist.</b> Upper limits had been introduced that weren't in the source requirement and served no stated purpose.</li>
+            </ul>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The decisions</div>
+            <div class="decision">
+              <div class="d-l">Decision · Provider-aware matrix</div>
+              <p>Replaced the flat country allow-list with a per-provider eligibility matrix. Slightly more complex to implement, but it's the only model that survives adding a third provider.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Structural fix over a patch</div>
+              <p>Rewrote all four criteria against source and logged each as a formal requirement change with rationale, rather than correcting them quietly in the ticket. The paper trail matters more than the fix — it's what stops the same error returning next quarter.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Diagnose the checkout window first</div>
+              <p>Separately, new users were structurally unable to complete instalment checkout: the payment window was shorter than the time account creation takes. No amount of conversion optimisation solves an impossible sequence — so the session gate was redesigned before anything else was tuned.</p>
+            </div>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">What it demonstrates</div>
+            <p>Specification review is only useful if it's adversarial. All four errors had already passed review by people reading for sense rather than tracing to source — which is exactly how confidently-wrong requirements reach engineering.</p>
+            <div class="metric-row">
+              <span class="mpill">Primary metric · <b>New-user checkout completion</b></span>
+              <span class="mpill">Guardrail · <b>Dispute rate</b></span>
+              <span class="mpill">Secondary · <b>Average booking value</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 2 -->
+      <div class="case rv" data-case>
+        <button class="case-head">
+          <div>
+            <div class="case-tags">
+              <span class="tag tag-a">AI / Discovery</span>
+              <span class="tag tag-t">0-to-1</span>
+              <span class="tag tag-n">Cross-platform</span>
+            </div>
+            <h3>Two AI discovery features, and the limits I put on them</h3>
+            <p class="case-thesis">Filter-based search can't express how people actually think about travel. The interesting work wasn't adding AI — it was deciding what to constrain.</p>
+          </div>
+          <span class="toggle">+</span>
+        </button>
+        <div class="case-body">
+          <div class="blk">
+            <div class="blk-label">The problem, stated properly</div>
+            <p>Someone looking for "a quiet hotel near good restaurants, walkable to the centre" cannot express that in filters. Filters scale linearly with the number of attributes and collapse under combination — so users were leaving the platform to search elsewhere and returning only to book, if at all.</p>
+            <p>The second, related problem: static hotel descriptions don't answer contextual questions. "Is this good for families?" "How far is the beach really?" Unanswered questions become decision fatigue, and decision fatigue becomes drop-off on the detail page.</p>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">Why AI rather than better filters</div>
+            <p>Natural-language intent is the actual unit of demand — people know what kind of trip they want before they know which attributes encode it. A retrieval partnership made the underlying layer viable without building it from scratch, which changed the cost calculation enough to justify the bet.</p>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The decisions</div>
+            <div class="decision">
+              <div class="d-l">Decision · One guest search, then a login gate</div>
+              <p>Unauthenticated users get a single query before signing in. It converts anonymous curiosity into a registered user at the moment of highest intent — and caps abuse of an expensive endpoint. The trade-off is friction on a feature meant to reduce friction, which is why it's one search rather than zero.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · A weekly cap for signed-in users</div>
+              <p>Per-user rate limiting on a cost-per-call feature. Unbounded usage on an inference-priced endpoint is a budget problem disguised as a success metric.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Ship a feedback loop with v1</div>
+              <p>A thumbs-up / thumbs-down signal on results, in the first release rather than a later one. An AI feature without a quality signal cannot be improved — you're left guessing which answers were wrong.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Latency as a hard requirement</div>
+              <p>A sub-three-second response ceiling, treated as a requirement rather than an aspiration. Slow AI search is strictly worse than fast filters — a delayed answer damages trust in the entire feature, not just that query.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Instrument in the specification</div>
+              <p>Analytics events defined in the requirement document itself — thirteen on the Q&amp;A feature alone — rather than added after launch. This was a direct correction of how I'd handled the earlier feature wave.</p>
+            </div>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">Scope</div>
+            <p>Both features specified across web, iOS and Android, with conditional rendering logic, two distinct backend modes, error and empty states, voice input, and defined fallback behaviour when the model returns nothing useful.</p>
+            <div class="metric-row">
+              <span class="mpill">Primary · <b>Adoption &amp; guest→login conversion</b></span>
+              <span class="mpill">Engagement · <b>Questions per session</b></span>
+              <span class="mpill">Guardrail · <b>Response latency</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 3 -->
+      <div class="case rv" data-case>
+        <button class="case-head">
+          <div>
+            <div class="case-tags">
+              <span class="tag tag-a">Payments &amp; growth</span>
+              <span class="tag tag-t">Sequencing</span>
+              <span class="tag tag-n">Rules engine</span>
+            </div>
+            <h3>Building a wallet before building the thing that needed it</h3>
+            <p class="case-thesis">The referral programme scored well enough to build early. It was deliberately built late — because it needed a ledger that didn't exist yet.</p>
+          </div>
+          <span class="toggle">+</span>
+        </button>
+        <div class="case-body">
+          <div class="blk">
+            <div class="blk-label">The sequencing problem</div>
+            <p>Three features wanted the same underlying capability: loyalty points needed somewhere to accrue, referral rewards needed somewhere to pay into, and promotional credits needed somewhere to sit. Each could have shipped with its own bespoke balance handling.</p>
+            <p>That path is faster once and slower three times. Building referral first would have meant building a throwaway ledger, then rebuilding it — plus a migration — a quarter later.</p>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The decisions</div>
+            <div class="decision">
+              <div class="d-l">Decision · Wallet as infrastructure, not a feature</div>
+              <p>Specified the wallet as shared transaction infrastructure with its own visibility, balance and transaction logic — then sequenced loyalty alongside it and the growth loops on top. Wallet is measured on adoption and reliability, not on growth, because that's what it actually is.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Remove the reversal model entirely</div>
+              <p>The original specification carried reversal handling for points. Once it was confirmed that points credit only on stay completion, every reversal path became unreachable — states that could never occur but still had to be built, tested and supported. I removed them. Fewer edge cases beats better edge-case handling.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Sequence mock APIs ahead of the real ones</div>
+              <p>Mapped backend dependencies and stood up mock endpoints early so integration risk surfaced while it was still cheap. The feature landed ahead of schedule — not because the build was fast, but because the surprises arrived early.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Legal at discovery, not at UAT</div>
+              <p>Terms, compliance framework and consumer-facing policy documentation written as part of the specification rather than after it. Nothing blocked at sign-off, because nothing was discovered at sign-off.</p>
+            </div>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The rules engine underneath</div>
+            <p>Loyalty runs on a rules engine I specified from scratch — awarding logic, redemption thresholds, eligibility conditions, and booking-completion triggers — designed so reward rules can change without a code release. Alongside it: the referral programme's reward logic, redemption caps and fraud-prevention rules, and a configurable promotions engine to replace ad-hoc per-campaign engineering with something auditable.</p>
+            <div class="metric-row">
+              <span class="mpill">Wallet · <b>Adoption &amp; failure rate</b></span>
+              <span class="mpill">Loyalty · <b>Redemption rate, not points issued</b></span>
+              <span class="mpill">Referral · <b>Referral-to-booking conversion</b></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 4 -->
+      <div class="case rv" data-case>
+        <button class="case-head">
+          <div>
+            <div class="case-tags">
+              <span class="tag tag-a">Process</span>
+              <span class="tag tag-t">Governance</span>
+              <span class="tag tag-n">Root cause</span>
+            </div>
+            <h3>The defect wasn't in the stories. It was in what generated them.</h3>
+            <p class="case-thesis">Three teams were complaining about the same artefacts. Fixing them individually was triage. The actual fix was two levels upstream.</p>
+          </div>
+          <span class="toggle">+</span>
+        </button>
+        <div class="case-body">
+          <div class="blk">
+            <div class="blk-label">The signal</div>
+            <p>Development, QA and product were all pushing back on AI-generated user stories — too granular in places, redundant in others, inconsistent in structure. Individually each complaint looked like a one-off. I was treating them that way for longer than I should have.</p>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The decisions</div>
+            <div class="decision">
+              <div class="d-l">Decision · Categorise before fixing</div>
+              <p>Stopped correcting stories one at a time. Collected the complaints from every source, sorted them into failure types, and traced each type to root cause. The stories weren't the problem — the prompts producing them were, and the PRD feeding those prompts was upstream of that.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Fix the input, then regenerate</div>
+              <p>Rewrote the PRD-creation prompt first, then the story-generation prompt, then regenerated at capability level rather than task level — which was the actual source of the granularity complaints.</p>
+            </div>
+            <div class="decision">
+              <div class="d-l">Decision · Get objections in the room</div>
+              <p>Ran a walkthrough with development, QA, product and scrum leadership covering the original issues and the resolutions, so objections surfaced live rather than privately afterwards. Formal sign-off before anything moved in the tracker.</p>
+            </div>
+          </div>
+
+          <div class="blk">
+            <div class="blk-label">The governance layer</div>
+            <p>Separately, I built the requirements framework the team now works against — requirement lifecycle, prioritisation model, readiness criteria, OKR traceability and cross-platform standards — then audited the existing backlog against it, reviewing 240+ tickets and surfacing 20+ specification gaps for resolution.</p>
+            <p>The framework isn't the point. The point is that without one, errors like the payment criteria in the first case study reach engineering routinely rather than occasionally.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= DECISION LOG ================= -->
+<section id="decisions">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">Decision log</div>
+      <h2>Calls I made, and <em>what they cost</em></h2>
+      <p class="sec-intro">Every product decision trades something away. These are ones where the trade-off was the interesting part.</p>
+    </div>
+    <div class="log rv">
+      <div class="log-row">
+        <div class="log-k">SCOPE ↓</div>
+        <div class="log-v">
+          <p>Removed reversal handling from the wallet specification entirely.</p>
+          <p class="why">Traded flexibility for a smaller surface area. Once points credited only on stay completion, reversals were unreachable states — code that could only ever be tested, never executed.</p>
+        </div>
+      </div>
+      <div class="log-row">
+        <div class="log-k">SEQUENCE ↻</div>
+        <div class="log-v">
+          <p>Delayed the referral programme behind wallet infrastructure.</p>
+          <p class="why">Traded time-to-market on a high-scoring feature against building the same ledger twice. Shipping order should follow dependency, not enthusiasm.</p>
+        </div>
+      </div>
+      <div class="log-row">
+        <div class="log-k">FRICTION ↑</div>
+        <div class="log-v">
+          <p>Put a login gate after one guest query on AI search.</p>
+          <p class="why">Deliberately added friction to a feature designed to remove it. One free query preserves the demonstration of value; the gate captures intent at its peak and protects a metered endpoint.</p>
+        </div>
+      </div>
+      <div class="log-row">
+        <div class="log-k">COMPLEXITY ↑</div>
+        <div class="log-v">
+          <p>Replaced a flat country allow-list with a per-provider matrix.</p>
+          <p class="why">Accepted implementation cost now to avoid a rewrite at the third provider. The simpler model wasn't simpler — it was just wrong later.</p>
+        </div>
+      </div>
+      <div class="log-row">
+        <div class="log-k">SCOPE ↓</div>
+        <div class="log-v">
+          <p>Excluded promotional stacking from the first release of the coupon engine.</p>
+          <p class="why">Traded a launch feature for a clean audit trail and bounded liability. Stacking is easy to add to a system that was built to be auditable and very hard to retrofit into one that wasn't.</p>
+        </div>
+      </div>
+      <div class="log-row">
+        <div class="log-k">PROCESS ↑</div>
+        <div class="log-v">
+          <p>Moved analytics instrumentation into the specification itself.</p>
+          <p class="why">Traded specification effort against measurability. The earlier feature wave shipped with analytics added late, which meant launching without the ability to read the result properly. Correcting that was the most useful process change I've made.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCOPE ================= -->
+<section id="scope">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">Full scope</div>
+      <h2>What I've owned <em>end to end</em></h2>
+      <p class="sec-intro">Beyond the case studies — the systems, infrastructure and documentation I've been responsible for.</p>
+    </div>
+    <div class="scope">
+      <div class="s-card rv">
+        <h3>Payments &amp; checkout</h3>
+        <ul>
+          <li>Digital wallet — balance, transaction and visibility logic</li>
+          <li>Instalment payments — eligibility, session and provider logic</li>
+          <li>Card and wallet payment options</li>
+          <li>Dynamic cancellation policy by payment method</li>
+          <li>Refund breakdown and transparency specification</li>
+          <li>Pricing logic — margins, taxes and offer application</li>
+        </ul>
+      </div>
+      <div class="s-card rv">
+        <h3>Growth &amp; retention</h3>
+        <ul>
+          <li>Loyalty programme and rules engine</li>
+          <li>Referral programme — rewards, caps, fraud rules</li>
+          <li>Configurable promotions and coupon engine</li>
+          <li>Real-time price-drop alerts</li>
+          <li>Traveller segmentation model</li>
+        </ul>
+      </div>
+      <div class="s-card rv">
+        <h3>Discovery &amp; AI</h3>
+        <ul>
+          <li>Natural-language hotel search</li>
+          <li>AI question-and-answer on property pages</li>
+          <li>Popularity scoring algorithm</li>
+          <li>Room recommendation engine</li>
+          <li>Search-to-book funnel optimisation</li>
+        </ul>
+      </div>
+      <div class="s-card rv">
+        <h3>Strategy &amp; governance</h3>
+        <ul>
+          <li>Annual product roadmap ownership</li>
+          <li>Requirements lifecycle framework</li>
+          <li>Prioritisation and readiness criteria</li>
+          <li>OKR traceability model</li>
+          <li>Backlog audit — 240+ tickets reviewed</li>
+          <li>Competitive analysis and feasibility</li>
+        </ul>
+      </div>
+      <div class="s-card rv">
+        <h3>Compliance &amp; security</h3>
+        <ul>
+          <li>GDPR and CCPA product compliance</li>
+          <li>10DLC messaging certification</li>
+          <li>Auth0 roles and permissions</li>
+          <li>Terms, policies and consumer documentation</li>
+          <li>Legal review integrated at discovery</li>
+        </ul>
+      </div>
+      <div class="s-card rv">
+        <h3>Support infrastructure</h3>
+        <ul>
+          <li>Multi-channel support stack, built from zero</li>
+          <li>AI-guided flows with human handoff</li>
+          <li>Cloud IVR call routing and queues</li>
+          <li>300+ article self-service knowledge base</li>
+          <li>Ticket workflows and escalation policy</li>
+          <li>Admin panel functional architecture</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">Background</div>
+      <h2>Three industries, <em>one discipline</em></h2>
+      <p class="sec-intro">Travel-tech, FMCG analytics and fintech. Different domains, same method — discovery, requirements, delivery.</p>
+    </div>
+    <div class="exp rv">
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="co">Invisia Software</div>
+          <div class="dt">Sep 2023 — Present</div>
+          <div class="dom">OTA &amp; Travel Tech<br>Consumer platform · 30L+ listings</div>
+        </div>
+        <div class="job-body">
+          <div class="role">Business Analyst — Product Owner &amp; APM scope</div>
+          <p>Sole product owner for a consumer travel platform, running eight major initiatives end to end across payments, growth and AI discovery. Shipped three revenue-critical features across web, Android and iOS in a two-month cycle with zero critical post-launch defects. Authored 250+ PRDs and built the requirements governance framework the team works against. Completed a dedicated Associate Product Manager assignment alongside standing product owner duties.</p>
+          <div class="chips">
+            <span class="chip">Payments</span><span class="chip">AI discovery</span><span class="chip">Growth loops</span><span class="chip">Rules engines</span><span class="chip">Compliance</span><span class="chip">Cross-platform</span>
+          </div>
+          <div class="links">
+            <a href="https://apps.apple.com/us/app/zee-business-the-travel-app/id6751061596" target="_blank" rel="noopener">iOS App Store ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.zeebusiness.zbtravel.thetravelapp" target="_blank" rel="noopener">Google Play ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="co">Insigma Technologies</div>
+          <div class="dt">Aug 2020 — Nov 2022</div>
+          <div class="dom">FMCG Analytics<br>Image recognition</div>
+        </div>
+        <div class="job-body">
+          <div class="role">Product Owner — FMCG Analytics</div>
+          <p>Requirements discovery, scoping and backlog prioritisation for 10+ enterprise mobile and web applications used by field execution teams. Worked with image-recognition engineering to convert on-ground retail problems — planogram compliance, shelf-range validation — into scalable digital workflows. Ran Agile ceremonies independently for a 15-member cross-functional squad.</p>
+          <div class="chips">
+            <span class="chip">Enterprise apps</span><span class="chip">Image recognition</span><span class="chip">Field execution</span><span class="chip">Agile delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="co">Research &amp; Ranking</div>
+          <div class="dt">Sep 2018 — Aug 2020</div>
+          <div class="dom">Fintech · Equentis<br>Wealth &amp; equity products</div>
+        </div>
+        <div class="job-body">
+          <div class="role">Product Owner — FinTech Platforms</div>
+          <p>Feature scoping, requirement lifecycles and release prioritisation for 5+ wealth-management and equity-investment applications across web and mobile. Built early-stage wireframes, sitemaps and functional specifications to streamline the investment journey, and validated acceptance criteria with engineering ahead of deployment.</p>
+          <div class="chips">
+            <span class="chip">Wealth management</span><span class="chip">Equities</span><span class="chip">Wireframing</span><span class="chip">UAT</span>
+          </div>
+          <div class="links">
+            <a href="https://play.google.com/store/apps/details?id=com.rnr.main" target="_blank" rel="noopener">Google Play ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="co">Wishfin.com</div>
+          <div class="dt">Jan 2017 — Aug 2018</div>
+          <div class="dom">Fintech<br>Consumer lending</div>
+        </div>
+        <div class="job-body">
+          <div class="role">Product Analyst</div>
+          <p>Moved from a customer-facing role into analysis by identifying workflow gaps in internal tooling. Found recurring operational bottlenecks across the lending journey through direct customer contact and tool audits, then translated them into process maps and user stories that shaped internal tool upgrades.</p>
+          <div class="chips">
+            <span class="chip">Consumer lending</span><span class="chip">Process mapping</span><span class="chip">Internal tools</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-label">Toolkit</div>
+      <h2>Skills &amp; <em>tools</em></h2>
+    </div>
+    <div class="skills">
+      <div class="sk rv">
+        <h3>Product</h3>
+        <div class="items"><span>Roadmap ownership</span><span>0-to-1 development</span><span>Product discovery</span><span>PRD authoring</span><span>GTM planning</span><span>Competitor analysis</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Delivery</h3>
+        <div class="items"><span>Agile / Scrum</span><span>Backlog grooming</span><span>Sprint planning</span><span>Acceptance criteria</span><span>UAT coordination</span><span>Release sign-off</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Technical</h3>
+        <div class="items"><span>Rules-engine design</span><span>API specification</span><span>Postman</span><span>Auth0</span><span>Mock API sequencing</span><span>Feature flags</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Analytics</h3>
+        <div class="items"><span>GA4</span><span>Mixpanel</span><span>Funnel analysis</span><span>Event instrumentation</span><span>Retention analysis</span><span>User research</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Tools</h3>
+        <div class="items"><span>Jira</span><span>Confluence</span><span>Azure DevOps</span><span>Figma</span><span>Miro</span><span>Draw.io</span></div>
+      </div>
+      <div class="sk rv">
+        <h3>Domains</h3>
+        <div class="items"><span>OTA &amp; travel</span><span>Payments</span><span>Loyalty &amp; rewards</span><span>FMCG analytics</span><span>Wealth &amp; equities</span><span>Consumer lending</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<div class="contact" id="contact">
+  <div class="wrap rv">
+    <div class="sec-label" style="text-align:center">Get in touch</div>
+    <h2>Let's talk <em>product</em></h2>
+    <p>Open to Product Manager, Associate Product Manager and Product Owner roles — travel-tech, fintech and consumer platforms. Bangalore or remote.</p>
+    <div class="c-links">
+      <a href="mailto:archanahaps@gmail.com" class="btn btn-p">archanahaps@gmail.com</a>
+      <a href="https://www.linkedin.com/in/archanasingh31/" class="btn btn-s" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="tel:+919958419429" class="btn btn-s">+91 99584 19429</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;width:100%">
+    <span>Archana Singh — Product Portfolio</span>
+    <span>Bangalore, India · 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // nav border on scroll
+  var nav=document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('stuck', window.scrollY>10); }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // case study accordions
+  document.querySelectorAll('[data-case] .case-head').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+
+  // scroll reveal
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el,i){
+      el.style.transitionDelay=(Math.min(i%6,5)*55)+'ms';
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+  }
+})();
+</script>
+</body>
+</html>
